@@ -27,7 +27,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Raj1367/dynamicform.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -177,10 +177,5 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
----
-
-## Contact
-
-For further questions or support, contact [your-email@example.com](mailto:your-email@example.com).
 
 

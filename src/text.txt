@@ -1,0 +1,34 @@
+// <Form form={form} layout="vertical">
+
+        //     <Form.Item style={{ fontWeight: "400", textTransform: "capitalize" }} label="Input" name="Input" rules={[{ required: true, message: 'Please input!' }]}>
+        //         <AutoComplete
+        //             options={options}
+        //             style={{ width: 200, textAlign: "start" }}
+        //             onSelect={onSelect}
+        //             placeholder="input here"
+        //             defaultValue={"FREEPOINT"}
+        //         />
+        //     </Form.Item>
+
+        //     <Form.Item style={{ fontWeight: "400", textTransform: "capitalize" }} label="Input" name="Input" rules={[{ required: true, message: 'Please input!' }]}>
+        //         <Input placeholder="input here" />
+        //     </Form.Item>
+
+        //     <Form.Item style={{ fontWeight: "400", textTransform: "capitalize" }} label="Input" name="Input" rules={[{ required: true, message: 'Please input!' }]}>
+        //         <DatePicker style={{ width: 200 }} />
+        //     </Form.Item>
+
+        //     <Form.Item style={{ fontWeight: "400", textTransform: "capitalize" }} label="Input" name="Input" rules={[{ required: true, message: 'Please input!' }]}>
+        //         <Select
+        //             defaultValue="checque"
+        //             style={{ width: 200, textAlign: "start" }}
+        //             options={options}
+        //         />
+        //     </Form.Item>
+
+        //     <Form.Item style={{ fontWeight: "400", textTransform: "capitalize" }} label="Input" name="Input" rules={[{ required: true, message: 'Please input!' }]}>
+        //         <Switch defaultChecked />
+        //     </Form.Item>
+
+
+        // </Form>

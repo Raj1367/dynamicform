@@ -65,6 +65,32 @@ const DynamicForm: React.FC<FormSchema> = () => {
         console.log(`switch to ${checked}`);
     };
 
+    const handleValuesChange = (changedValues: any, allValues: any) => {
+
+        console.log("Changed Values:", changedValues);
+        console.log("All Values:", allValues);
+        
+        const productRate = allValues["product rate"] || 0;
+        const productTaxes = allValues["product taxes"] || 0;
+        const productLineTotal = productRate;
+
+        const othersRate = allValues["others rate"] || 0;
+        const othersTaxes = allValues["others taxes"] || 0;
+        const othersLineTotal = othersRate + othersTaxes;
+
+        const subtotal = productRate + othersRate
+        const taxes = productTaxes + othersTaxes
+        const grandTotal = productLineTotal + othersLineTotal + taxes;
+
+        form.setFieldsValue({
+            "product line total": productLineTotal,
+            "others line total": othersLineTotal,
+            "sub total": subtotal,
+            "taxes": othersTaxes,
+            "total": grandTotal,
+        });
+    };
+
     const renderField = (field: FieldSchema) => {
         const commonProps = {
             name: field.name,
@@ -228,15 +254,13 @@ const DynamicForm: React.FC<FormSchema> = () => {
         }
     };
 
-
-
-
     return (
         <Form
             form={form}
             layout="vertical"
             onFinish={handleFinish}
             onFinishFailed={handleFinishFailed}
+            onValuesChange={handleValuesChange}
             initialValues={{
                 ["supplier"]: "FREEPOINT",
                 ["shipped from terminal"]: "ET Twin Oaks",
@@ -254,11 +278,11 @@ const DynamicForm: React.FC<FormSchema> = () => {
                 ["others rate"]: 0,
                 ["others taxes"]: 0,
                 ["others line total"]: 0,
+                ["total"]: 0,
                 ["def taxes"]: 0,
                 ["quantity"]: 0,
                 ["disc"]: 0,
                 ["sub total"]: 0,
-                ["total"]: 0,
                 ["product"]: "HO-TwnO Sunoco-Freepoint",
                 ["payment on hold"]: false,
                 ["Copy BOL and Datetime"]: true
@@ -337,7 +361,7 @@ const DynamicForm: React.FC<FormSchema> = () => {
                                     return (
                                         <Flex justify="space-between" gap={50}>
                                             <span style={{ fontWeight: "600" }}>{data.label}</span>
-                                            <FormItem>
+                                            <FormItem name={data.name}>
                                                 <Input
                                                     placeholder={data.placeholder}
                                                     defaultValue={data.defaultvalue}
